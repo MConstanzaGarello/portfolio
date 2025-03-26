@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio - Proyectos</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Kristen Stewart</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre mí</a></li>
+                    <li><a href="projects.html">Proyectos</a></li>
+                    <li><a href="contact.html">Contacto</a></li>                
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="proyectos">
+                <h2>Proyectos Realizados</h2>
+                <ul>
+                    <li>
+                        <strong>Portfolio Personal</strong> - Un sitio web responsivo desarrollado con HTML, CSS y JavaScript.
+                        <a href="https://github.com/usuario/portfolio" target="_blank">Ver en GitHub</a>
+                    </li>
+                    <li>
+                        <strong>Aplicación de Tareas</strong> - Aplicación web creada con React y Firebase para gestionar tareas diarias.
+                        <a href="https://github.com/usuario/todo-app" target="_blank">Ver en GitHub</a>
+                    </li>
+                </ul>
+            </section>            
+
+            <section id="experiencia">
+                <h2>Experiencia Laboral</h2>
+                <ul>
+                    <li>
+                        <strong>Desarrolladora Web en Tech Solutions</strong> (2021 - 2023)
+                        <p>Responsable del desarrollo de aplicaciones web modernas y responsivas.</p>
+                    </li>
+                    <li>
+                        <strong>Freelancer</strong> (2019 - 2021)
+                        <p>Desarrollo de sitios web personalizados para pequeñas empresas.</p>
+                    </li>
+                </ul>
+            </section>
+            <footer>
+                <button id="toggle-mode">Cambiar a Modo Oscuro</button>
+                <p>&copy; 2025 Kristen Stewart - Todos los derechos reservados.</p>
+            </footer>
+            <script>
+                // Cargar el estado del modo oscuro desde localStorage
+                document.addEventListener('DOMContentLoaded', () => {
+                    if (localStorage.getItem('dark-mode') === 'enabled') {
+                        document.body.classList.add('dark-mode');
+                    }
+                });
+                
+                // Alternar entre modo claro y oscuro
+                const toggleButton = document.getElementById('toggle-mode');
+                toggleButton.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                
+                    if (document.body.classList.contains('dark-mode')) {
+                        localStorage.setItem('dark-mode', 'enabled');
+                    } else {
+                        localStorage.setItem('dark-mode', 'disabled');
+                    }
+                });
+                </script>
+        </main>
+    </body>
+</html>

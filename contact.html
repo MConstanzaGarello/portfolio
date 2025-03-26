@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio - Contacto</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Kristen Stewart</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre mí</a></li>
+                    <li><a href="projects.html">Proyectos</a></li>
+                    <li><a href="contact.html">Contacto</a></li>                
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Contacto</h2>
+                <form action="#" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+
+            <section id="redes-sociales">
+                <h2>Redes Sociales</h2>
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/kristen-stewart-668741205/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://github.com/stewartemma" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.instagram.com/kristennstewartu/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>                
+            </section>
+            <footer>
+                <button id="toggle-mode">Cambiar a Modo Oscuro</button>
+                <p>&copy; 2025 Kristen Stewart - Todos los derechos reservados.</p>
+            </footer>
+            <script>
+                // Cargar el estado del modo oscuro desde localStorage
+                document.addEventListener('DOMContentLoaded', () => {
+                    if (localStorage.getItem('dark-mode') === 'enabled') {
+                        document.body.classList.add('dark-mode');
+                    }
+                });
+                
+                // Alternar entre modo claro y oscuro
+                const toggleButton = document.getElementById('toggle-mode');
+                toggleButton.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                
+                    if (document.body.classList.contains('dark-mode')) {
+                        localStorage.setItem('dark-mode', 'enabled');
+                    } else {
+                        localStorage.setItem('dark-mode', 'disabled');
+                    }
+                });
+                </script>        
+        </main>
+    </body>
+</html>
